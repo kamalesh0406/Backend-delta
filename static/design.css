@@ -1,0 +1,26 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+.description{
+	display:flex;
+	justify-content: flex-end;
+	padding:10px;
+}
+.dates{
+	display:flex;
+	justify-content: flex-start;
+	align-items: space-between;
+	flex-wrap: wrap;
+	padding: 10px;
+}
+ul{
+	margin:10px;
+	list-style-type: none;
+	padding: 5px;
+	border: 0.5px solid grey;
+	border-radius: 6px;
+	box-shadow: 4px 4px grey;
+}

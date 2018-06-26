@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendar</title>
+	<link rel="stylesheet" type="text/css" href="/static/design.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Your Personal Calendar</h1>
+  </div>
+</div>
+<div class="description">
+<form action="/calendar/add" method="GET">
+	<input type="submit" value="Add Event" class="btn btn-primary">
+</form>
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         <p>{{ message }}</p>
+      {% endfor %}
+   {% endif %}
+{% endwith %}
+</div>
+<div class="dates">
+{% for row in calendar %}
+<ul>
+{% if row[1]== 'None' %}
+<li>Date: {{row[0]}} </li>
+<li>No Events</li>
+{%else%}
+<li>Date: {{row[0]}} </li>
+<li>Start Time: {{row[1]}}</li>
+<li>End Time: {{row[2]}}</li>
+<li>Title: {{row[3]}}</li>
+<li>Description: {{row[4]}}</li>
+{%endif%}
+</ul>
+{% endfor %}
+</div>
+
+
+</body>
+</html>
