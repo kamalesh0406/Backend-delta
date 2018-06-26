@@ -1,5 +1,5 @@
 import MySQLdb
-db = MySQLdb.connect("localhost","root","rati04kamal","CALENDAR")
+db = MySQLdb.connect("localhost","your username","your password","CALENDAR")
 
 curs = db.cursor()
 
